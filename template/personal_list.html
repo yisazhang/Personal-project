@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除和修改个人信息</title>
+</head>
+<body background="/static/picture.jpg">
+<table border="1">
+  <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>出生日期</th>
+      <th>参加工作年份</th>
+      <th>户口所在地</th>
+      <th>现居住地</th>
+      <th>电话</th>
+      <th>邮编</th>
+      <th>婚否</th>
+      <th>证件</th>
+      <th>证件号</th>
+      <th>操作</th>
+      <th>操作</th>
+
+  </tr>
+    {% for personal in personals %}
+    <tr>
+      <td>{{personal.id}}</td>
+      <td>{{personal.name}}</td>
+      <td>{{personal.sex}}</td>
+      <td>{{personal.birth_date}}</td>
+      <td>{{personal.work_date}}</td>
+      <td>{{personal.address}}</td>
+      <td>{{personal.city}}</td>
+      <td>{{personal.tell}}</td>
+      <td>{{personal.mail}}</td>
+      <td>{{personal.wendy}}</td>
+      <td>{{personal.paper}}</td>
+      <td>{{personal.card_id}}</td>
+      <td><a href="/personal_delete/?id={{personal.id}}">删除</a></td>
+      <td><a href="/personal_update_html/?id={{personal.id}}">修改</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
