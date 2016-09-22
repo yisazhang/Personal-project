@@ -15,6 +15,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from PersonalInformation.view import person
+from PersonalInformation.view import personal
 from PersonalInformation.view import personal_list
 from PersonalInformation.view import personal_delete
 from PersonalInformation.view import personal_update_html
@@ -23,6 +24,7 @@ from PersonalInformation.view import personal_update
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url('^person/$',person),
+    url('^personal/$',personal),
     url('^personal_list/$',personal_list),
     url('^personal_delete/$',personal_delete),
     url('^personal_update_html/$',personal_update_html),

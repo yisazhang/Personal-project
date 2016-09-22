@@ -6,8 +6,7 @@ from models import Personal
 def person(request):
 	return render(request,'person.html')
 
-
-def personal_list(request):
+def personal(request):
 	username = request.GET.get('user')
 	sex = request.GET.get('sex')
 	birth_date = request.GET.get('birth_date')
@@ -32,6 +31,10 @@ def personal_list(request):
 		paper =paper,
 		card_id = card_id
 	)
+	personals = Personal.objects.all()
+	return render(request,'personal_list.html',context={'personals':personals})
+
+def personal_list(request):
 	personals = Personal.objects.all()
 	return render(request,'personal_list.html',context={'personals':personals})
 
